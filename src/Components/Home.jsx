@@ -1,29 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 export default function Home() {
-  return (
-    <div style={styles.container}>
-      <h1>Welcome to the Online Movie Tickets Booking</h1>
-      <p>Book your movie tickets online easily and quickly!</p>
-      <Link to="/Login">
-        <button
-          style={styles.button}
-          onMouseOver={(e) => {
-            e.target.style.backgroundColor = "#0f2c47";
-            e.target.style.color = "white";
-          }}
-          onMouseOut={(e) => {
-            e.target.style.backgroundColor = "white";
-            e.target.style.color = "#0f2c47";
-          }}
-        >
-          Login
-        </button>
-      </Link>
-    </div>
-  );
-}
-const styles = {
+  const styles = {
   container: {
     textAlign: "center",
     marginTop: "100px",
@@ -49,4 +27,26 @@ const styles = {
     cursor: "pointer",
     transition: "all 0.3s",
   },
+}
+  return (
+    <div style={styles.container}>
+      <h1>Welcome to the Online Movie Tickets Booking</h1>
+      <p>Book your movie tickets online easily and quickly!</p>
+      <Link to="/Login">
+        <button
+          style={styles.button}
+          onMouseOver={(e) => {
+            e.target.style.backgroundColor = "#0f2c47";
+            e.target.style.color = "white";
+          }}
+          onMouseOut={(e) => {
+            e.target.style.backgroundColor = "white";
+            e.target.style.color = "#0f2c47";
+          }}
+        >
+          Login
+        </button>
+      </Link>
+    </div>
+  );
 }

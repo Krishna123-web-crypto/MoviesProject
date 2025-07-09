@@ -22,7 +22,7 @@ export default function Login() {
     e.preventDefault();
     alert(`Logged in with phone: ${phone} and OTP: ${otp}`);
   };
-  // Styles
+    // Styles
   const containerStyle = {
     maxWidth: "400px",
     margin: "40px auto",
