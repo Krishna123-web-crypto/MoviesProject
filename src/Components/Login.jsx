@@ -6,19 +6,23 @@ export default function Login() {
   const [phone, setPhone] = useState("");
   const [otpSent, setOtpSent] = useState(false);
   const [otp, setOtp] = useState("");
+  // Handle email login
   const handleEmailLogin = (e) => {
     e.preventDefault();
     alert(`Logged in with email: ${email}`);
   };
+  // Send OTP to phone
   const handleSendOtp = (e) => {
     e.preventDefault();
     setOtpSent(true);
     alert(`OTP sent to phone: ${phone}`);
   };
+  // Handle OTP login
   const handleOtpLogin = (e) => {
     e.preventDefault();
     alert(`Logged in with phone: ${phone} and OTP: ${otp}`);
   };
+  // Styles
   const containerStyle = {
     maxWidth: "400px",
     margin: "40px auto",
@@ -62,17 +66,23 @@ export default function Login() {
   return (
     <div style={containerStyle}>
       <h2 style={{ textAlign: "center" }}>Login</h2>
+      {/* Login method switch buttons */}
       <div style={{ textAlign: "center", marginBottom: "20px" }}>
-        <button style={tabStyle} onClick={() => setLoginMethod("email")}>Login with Email</button>
-        <button style={tabStylePhone} onClick={() => setLoginMethod("phone")}>Login with Phone</button>
-      </div>{
-         loginMethod === "email" && (
+        <button style={tabStyle} onClick={() => setLoginMethod("email")}>
+          Login with Email
+        </button>
+        <button style={tabStylePhone} onClick={() => setLoginMethod("phone")}>
+          Login with Phone
+        </button>
+      </div>
+      {/* Email login form */}
+      {loginMethod === "email" && (
         <form onSubmit={handleEmailLogin}>
           <label>Email:</label>
           <input
             type="email"
             value={email}
-            onChange={e => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             required
             style={inputStyle}
           />
@@ -80,20 +90,21 @@ export default function Login() {
           <input
             type="password"
             value={password}
-            onChange={e => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             required
             style={inputStyle}
           />
           <button type="submit" style={buttonStyle}>Login</button>
         </form>
       )}
+      {/* Phone login form */}
       {loginMethod === "phone" && (
         <form onSubmit={otpSent ? handleOtpLogin : handleSendOtp}>
           <label>Phone:</label>
           <input
             type="tel"
             value={phone}
-            onChange={e => setPhone(e.target.value)}
+            onChange={(e) => setPhone(e.target.value)}
             required
             disabled={otpSent}
             style={inputStyle}
@@ -104,7 +115,7 @@ export default function Login() {
               <input
                 type="text"
                 value={otp}
-                onChange={e => setOtp(e.target.value)}
+                onChange={(e) => setOtp(e.target.value)}
                 required
                 style={inputStyle}
               />
