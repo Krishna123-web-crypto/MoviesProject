@@ -15,13 +15,10 @@ export default function Contact() {
         <form onSubmit={handleSubmit} className="contact-form">
           <label>Name:</label>
           <input type="text" required />
-
           <label>Email:</label>
           <input type="email" required />
-
           <label>Message:</label>
           <textarea rows="4" required></textarea>
-
           <button type="submit">Send Message</button>
         </form>
       )}
