@@ -7,7 +7,7 @@ export default function Contact() {
     setIsSubmitted(true);
   };
   return (
-    <div className="contact-container">
+    <div>
       <h1>Contact Us</h1>
 
       {isSubmitted ? (
