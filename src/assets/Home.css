@@ -1,0 +1,29 @@
+.home-container {
+  text-align: center;
+  margin-top: 100px;
+}
+.home-heading {
+  font-size: 40px;
+  color: #0f2c47;
+  margin-bottom: 10px;
+}
+.home-subtext {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+.home-login-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #0f2c47;
+  background-color: white;
+  color: #0f2c47;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.home-login-button:hover {
+  background-color: #0f2c47;
+  color: white;
+}
